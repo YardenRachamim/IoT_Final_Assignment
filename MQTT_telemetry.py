@@ -19,9 +19,9 @@ rootCA =  rel_path + 'HW1/root-CA.crt'
 privateKey = rel_path + 'certificates/56075c5af2-private.pem.key'
 cert = rel_path + 'certificates/56075c5af2-certificate.pem.crt'
 
-thingName = 'yarden_rachamim'
+thingName = 'MayaOriYarden-demo'
 deviceId = thingName
-telemetry = None
+#telemetry = None
 topic = thingName + '/telemetry'
 interval = 2
 
@@ -161,6 +161,11 @@ while True:
             }
     print(topic)
     print(json.dumps(payload))
-    myMQTTClient.publish(topic,json.dumps(payload),1)
+
+    try:
+        myMQTTClient.publish(topic,json.dumps(payload), 1)
+    except:
+        continue
+
     print("interval is {}".format(interval))
     time.sleep(interval)
