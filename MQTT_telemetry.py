@@ -152,7 +152,7 @@ while True:
         print("Failed to read temperature and humidity")
 
     # Light sensor data 
-	light = mcp.read_adc(7)
+    light = mcp.read_adc(7)
     print('light sensor data={}'.format(light))
     payload ={
                 'temperature': temperature,
