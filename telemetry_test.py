@@ -34,7 +34,7 @@ while True:
         print("Failed to read temperature and humidity")
 
     # Light sensor data 
-    print('light sensor data={}'.format(mcp.read_adc(7))
+    print('light sensor data={}'.format(mcp.read_adc(7)))
     time.sleep(0.5)
 
     # # Read all the ADC channel values in a list.
