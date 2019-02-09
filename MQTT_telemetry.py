@@ -19,7 +19,7 @@ rootCA =  rel_path + 'HW1/root-CA.crt'
 privateKey = rel_path + 'certificates/56075c5af2-private.pem.key'
 cert = rel_path + 'certificates/56075c5af2-certificate.pem.crt'
 
-thingName = 'MayaOriYarden-demo'
+thingName = 'yarden_rachamim'
 deviceId = thingName
 telemetry = None
 topic = thingName + '/telemetry'
