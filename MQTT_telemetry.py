@@ -23,7 +23,7 @@ thingName = 'MayaOriYarden-demo'
 deviceId = thingName
 #telemetry = None
 topic = thingName + '/telemetry'
-interval = 2
+interval = 15
 
 # Sensor configuration:
 # Configuration for Temperature and humidity sensor:
