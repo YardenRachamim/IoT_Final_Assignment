@@ -26,7 +26,7 @@ def customCallback(client, userdata, message):
     print("from topic: ")
     print(message.topic)
     print("--------------\n\n")
-    print("isTapOn = " + (str) isTapOn)
+    print("isTapOn = " + (str) (isTapOn))
     print("--------------\n\n")
 
 
