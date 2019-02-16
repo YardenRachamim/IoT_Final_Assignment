@@ -30,9 +30,10 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
 
 
-def tapOnCallback():
+def tapOnCallback(client, userdata, message):
     global isTapOn
     isTapOn = True
+    print("inside toOnCallBack")
 
 
 
@@ -62,11 +63,12 @@ myAWSIoTMQTTClient.configureMQTTOperationTimeout(5)  # 5 sec
 # Connect and subscribe to AWS IoT
 myAWSIoTMQTTClient.connect()
 myAWSIoTMQTTClient.subscribe(topic, 1, customCallback)
+myAWSIoTMQTTClient.subscribe(deviceId + 'telemetryCounterBack', 1, tapOnCallback)
 time.sleep(2)
 counter = 0
 
 while True:
     myAWSIoTMQTTClient.publish(topic, json.dumps({'counter': counter}), 1)
-    myAWSIoTMQTTClient.subscribe(deviceId + 'telemetryCounterBack', 1, tapOnCallback)
+    
     time.sleep(10)
     counter += 1
